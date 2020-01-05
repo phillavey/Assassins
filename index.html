@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="node_modules/bulma/css/bulma.css" type="text/css"/>
+</head>
+
+<body>
+
+<h1>Hello World!</h1>
+
+<script>
+
+
+//--------------Funct--------------//
+var counter = false;
+function myFunction() {
+  if (!counter)
+    document.getElementById("demo").innerHTML = "Toggle On.";
+  else
+    document.getElementById("demo").innerHTML = "Toggle Off.";
+
+  counter = !counter;
+}
+
+//---------------OBJ--------------//
+
+class Person {
+  constructor(name, target) {
+    this.name = name;
+    this.target = target;
+  }
+}
+
+let p1 = new Person("Phillip", null);
+let p2 = new Person("Sophie", p1);
+p1.target = p2;
+
+//---------Funct-----------//
+
+function printPerson(person) {
+  document.getElementById("test").innerHTML = person.name + " : " + person.target.name;
+}
+
+</script>
+
+
+
+
+<h2>A Web Page</h2>
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Enter Secret Code">
+  </div>
+</div>
+<p id="test">Person Here</p>
+<button class="button" type="button" onClick="printPerson(p2)">Print?</button>
+
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html>
