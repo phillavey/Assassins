@@ -1,63 +1,59 @@
 <!doctype html>
 <html>
+
 <head>
-<link rel="stylesheet" href="node_modules/bulma/css/bulma.css" type="text/css"/>
+  <!-- Importing bulma without downloading it via a CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+  <!-- this is a custom css sheet you can use on top of bulma -->
+  <!-- right now this just makes the body take the whole height of the page -->
+  <link rel="stylesheet" href="./stylesheet.css">
 </head>
 
-<body>
+<body class="has-background-black">
 
-<h1>Hello World!</h1>
-
-<script>
-
-
-//--------------Funct--------------//
-var counter = false;
-function myFunction() {
-  if (!counter)
-    document.getElementById("demo").innerHTML = "Toggle On.";
-  else
-    document.getElementById("demo").innerHTML = "Toggle Off.";
-
-  counter = !counter;
-}
-
-//---------------OBJ--------------//
-
-class Person {
-  constructor(name, target) {
-    this.name = name;
-    this.target = target;
-  }
-}
-
-let p1 = new Person("Phillip", null);
-let p2 = new Person("Sophie", p1);
-p1.target = p2;
-
-//---------Funct-----------//
-
-function printPerson(person) {
-  document.getElementById("test").innerHTML = person.name + " : " + person.target.name;
-}
-
-</script>
+<!-- Very basic boilerplate code -->
+<!-- Look at bulma docs to customize -->
 
 
+<!-- section for the title -->
+  <section class="hero is-medium is-black is-bold"> 
+    <div class="hero-body ">
+      <div class="container">
+        <h1 class="title">
+          Welcome to Assassins
+        </h1>
+        <h2 class="subtitle">
+          subtitle
+        </h2>
+      </div>
+    </div>
+  </section>
+
+<!-- section for the input text and button -->
+  <section>
+    <div class="hero-body">
+      <div class="container">
+        <div class="field">
+          <div class="control">
+            <input id="input_text" class="input" type="text" placeholder="Primary input">    
+          </div>
+        </div>
+        <button id="sumbit_button" class="button is-danger">Find your target</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- You can add more -->
 
 
-<h2>A Web Page</h2>
-<div class="field">
-  <label class="label">Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Enter Secret Code">
-  </div>
-</div>
-<p id="test">Person Here</p>
-<button class="button" type="button" onClick="printPerson(p2)">Print?</button>
-
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
-
+  <!-- this loads your javascript from a file called script -->
+  <!-- best pratice is not have javascript in your index.html -->
+  <!-- the placement of this depends on what youre doing
+  (in this example we want our webpage to be created and loaded before we do things like onClick, create functions, arrays, objects, etc) -->
+  <!-- also loading up jquery via CDN so you don't have to download -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js" type="module"> </script>
 </body>
+
 </html>
